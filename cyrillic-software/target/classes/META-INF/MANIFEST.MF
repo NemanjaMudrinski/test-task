@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: nemanja
+Build-Jdk: 11.0.6
+Implementation-Title: Cyrillic Software
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: 22.nemanja
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/cyrillic-software
+Created-By: Maven Integration for Eclipse
+
