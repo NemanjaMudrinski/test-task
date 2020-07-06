@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 import javax.validation.constraints.Size;
 
 
@@ -28,6 +29,10 @@ public class User implements Entities<User, Long> {
 	private String email;
 	@Size(min = 8)
 	private String password;
+	
+//	@Version
+//	@Column(nullable = false)
+//	private Long version;
 	
 	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER , cascade = CascadeType.ALL)
 	private Set<UserPermission> userPermission;
@@ -106,8 +111,13 @@ public class User implements Entities<User, Long> {
 	public void setFarm(Set<Farm> farm) {
 		this.farm = farm;
 	}
-	
-	
-	
-	
+
+//	public Long getVersion() {
+//		return version;
+//	}
+//
+//	public void setVersion(Long version) {
+//		this.version = version;
+//	}
+
 }

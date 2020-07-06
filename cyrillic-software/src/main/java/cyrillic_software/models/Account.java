@@ -22,8 +22,7 @@ public class Account implements Entities<Account, Long> {
 	@OneToOne(mappedBy = "account")
 	private Customer customer;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "farm_id", referencedColumnName = "id")
+	@OneToOne(mappedBy = "user")
 	private Farm farm;
 	
 	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})

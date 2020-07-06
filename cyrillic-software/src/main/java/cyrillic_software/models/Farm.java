@@ -18,7 +18,8 @@ public class Farm implements Entities<Farm, Long> {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String farmName;
-	@OneToOne(mappedBy = "farm")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "account_id", referencedColumnName = "id")
 	private Account account;
 	
 	@ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})

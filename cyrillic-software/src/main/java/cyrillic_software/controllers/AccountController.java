@@ -30,6 +30,11 @@ public class AccountController extends GenerateController<AccountDto, Account, L
 	public AccountController(GenerateService<Account, Long> service) {
 		super(service, AccountDto.class);
 	}
+	
+	@RequestMapping(value="/hello", method=RequestMethod.GET)
+	public String hello() {
+		return "Hello world";
+	}
 
 	@RequestMapping(value="/find-account/{email}", method=RequestMethod.GET)
     public ResponseEntity<Iterable<AccountDto>> userHasAccessToAccount(@PathVariable String email) {
